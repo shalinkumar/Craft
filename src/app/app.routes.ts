@@ -6,9 +6,9 @@
 // Deprecated import 
 
 import {ModuleWithProviders }from '@angular/core';
-import {Routermodule,Routes} from '@angular/router';
-import {CatListComponent} from './cats/cat-list.component';
-import {DogListComponent} from './dogs/dog-list.component';
+import {Routes,RouterModule} from '@angular/router';
+import {CatListComponent} from './cats/cat-list-component';
+import {DogListComponent} from './dogs/dog-list-component';
 
 
 // We then define an array of routes which is of type Routes 
@@ -17,9 +17,18 @@ import {DogListComponent} from './dogs/dog-list.component';
 
 //route configuration
 export const routes:Routes=[
+    {
+     path:'',
+     redirectTo:'/dogs',
+     pathMatch:'full'
+    },
+    //{
+     //path:'',
+     //component:HomeComponent,  
+    //},
     {path:'cats',component:CatListComponent},
     {path:'dogs',component:DogListComponent}
 ];
 
-export const routing: ModuleWithProviders = Routermodule.forRoot(routes);
+export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
 
