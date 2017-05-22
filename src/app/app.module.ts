@@ -11,7 +11,7 @@ import {CatDetailsComponent} from './cats/cat-details-component';
 import {DogListComponent} from './dogs/dog-list-component';
 import {DogDetailsComponent} from './dogs/dog-details-component';
 import {PetService} from './pet.service';
-
+import { Pet }          from './pet';
 import {routing} from './app.routes'
 
 //Decorator 

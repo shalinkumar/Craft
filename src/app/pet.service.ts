@@ -1,61 +1,59 @@
-// ======= ./app/pet.service.ts =============
+// ====== ./app/pet.service.ts ======
 
-//imports
-import {Injectable} from '@angular/core';
-import {Jsonp,URLSearchParams} from '@angular/http';
+// Imports
+import { Injectable }    from '@angular/core';
+import { Jsonp, URLSearchParams } from '@angular/http';
 import 'rxjs/add/operator/map';
-
-
+// Decorator to tell Angular that this class can be injected as a service to another class
 @Injectable()
-export class PetService{
+export class PetService {
 
-//class constructor with jsonp injected
-constructor(private Jsonp:Jsonp){}
+  // Class constructor with Jsonp injected
+  constructor(private jsonp: Jsonp) { }
 
-//baseurl for petfinder api
-private petsUrl = 'http://api.petfinder.com/';
+  // Base URL for Petfinder API
+  private petsUrl = 'http://api.petfinder.com/';
 
-//get a list if pets based on animal
-findPets(animal:string){
+  // Get a list if pets based on animal
+  findPets(animal : string) {
 
-// End point for list of pets:
+    // End point for list of pets:
     // http://api.petfinder.com/pet.find?key=[API_KEY]&animal=[ANIMAL]&format=json&location=texas
     const endPoint = 'pet.find'
 
     // URLSearchParams makes it easier to set query parameters and construct URL
     // rather than manually concatenating
     let params = new URLSearchParams();
-    params.set('key','[API_KEY]');
-     params.set('location', 'texas');
+    params.set('key', '[API_KEY]');
+    params.set('location', 'texas');
     params.set('animal', animal);
     params.set('format', 'json');
     params.set('callback', 'JSONP_CALLBACK');
 
-    // return response 
+    // Return response
+    return this.jsonp
+              .get(this.petsUrl + endPoint, { search: params })
+              .map(response => <string[]> response.json().petfinder.pets.pet);
+  }
 
-    return this.Jsonp
-            .get(this.petsUrl + endPoint,{search:params})
-            .map(response => <string[]> response.json().petfinder.pets.pet);
-} 
-
-//get a pet based on their id
-findPetById(id:string) {
-
-      // End point for list of pets:
-    // http://api.petfinder.com/pet.find?key=[API_KEY]&animal=[ANIMAL]&format=json&location=texas
-    const endPoint = 'pet.get'
+  // get a pet based on their id
+  findPetById(id: string) {
 
     // End point for list of pets:
     // http://api.petfinder.com/pet.find?key=[API_KEY]&animal=[ANIMAL]&format=json&location=texas
-   let params = new URLSearchParams();
-     params.set('key', '[API_KEY]');
+    const endPoint = 'pet.get'
+
+    // URLSearchParams makes it easier to set query parameters and construct URL
+    // rather than manually concatinating
+    let params = new URLSearchParams();
+    params.set('key', '[API_KEY]');
     params.set('id', id);
     params.set('format', 'json');
     params.set('callback', 'JSONP_CALLBACK');
 
-    return this.Jsonp
-    .get(this.petsUrl + endPoint,{search:params})
-     .map(response => <string[]> response.json().petfinder.pet);
-}
-
+    // Return response
+    return this.jsonp
+              .get(this.petsUrl + endPoint, { search: params })
+              .map(response => <string[]> response.json().petfinder.pet);
+  }
 }
