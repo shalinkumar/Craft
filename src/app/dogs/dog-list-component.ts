@@ -22,12 +22,12 @@ import {Routes,RouterModule} from '@angular/router';
 
 //component class
 export class DogListComponent implements OnInit{
-
+debugger
   // Private property for binding
   dogs: Observable<string[]>;
 
   constructor(private petService: PetService) {
-
+debugger
   }
 
   // Load data ones componet is ready

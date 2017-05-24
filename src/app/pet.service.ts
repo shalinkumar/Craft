@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map';
 // Decorator to tell Angular that this class can be injected as a service to another class
 @Injectable()
 export class PetService {
-
+debugger
   // Class constructor with Jsonp injected
   constructor(private jsonp: Jsonp) { }
 
@@ -16,7 +16,7 @@ export class PetService {
 
   // Get a list if pets based on animal
   findPets(animal : string) {
-
+debugger
     // End point for list of pets:
     // http://api.petfinder.com/pet.find?key=[API_KEY]&animal=[ANIMAL]&format=json&location=texas
     const endPoint = 'pet.find'
