@@ -19,7 +19,7 @@ import {DogListComponent} from './dogs/dog-list-component';
 export const routes:Routes=[
     {
      path:'',
-     redirectTo:'/dogs',
+     redirectTo:'./dogs',
      pathMatch:'full'
     },
     //{
