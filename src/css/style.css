@@ -1,3 +1,6 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+
  .post-body img {
             height: auto;
             max-width: 100%;

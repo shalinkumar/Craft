@@ -1,38 +1,88 @@
 
 
-<!--<div class="demo-layout-transparent mdl-layout mdl-js-layout">
-      <header class="mdl-layout__header mdl-layout__header--transparent">
-        <div class="mdl-layout__header-row">
 
-        
-          <span class="mdl-layout-title">Scotch Pets</span>
-
-          
-          <div class="mdl-layout-spacer"></div>
-
-         
-          <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" [routerLink]="['/']">Home</a>
-            <a class="mdl-navigation__link" [routerLink]="['/cats']">Cats</a>
-            <a class="mdl-navigation__link" [routerLink]="['/dogs']">Dogs</a>
-          </nav>
-        </div>
-      </header>
-
-      <main class="mdl-layout__content">
-        <h1 class="header-text">We care about pets...</h1>
-      </main>
-    </div>-->
-
- <body>
+<!--<md-toolbar color="primary">
+    <button class="app-icon-button" [mdMenuTriggerFor]="menu">
+      <i class="material-icons app-toolbar-menu">menu</i>
+    </button>
+    Angular 2 Material2 Example App
+    <span class="app-toolbar-filler"></span>
+    <button md-button (click)="isDarkTheme = !isDarkTheme">TOGGLE DARK THEME</button>
+  </md-toolbar>-->
   
-   
-</body>
-    
+  
+
+<!--
+<md-toolbar color="primary">
+  <md-tab-group [selectedIndex]="selectedTab">
+    <md-tab label="Tab 1"></md-tab>
+    <md-tab label="Tab 2"></md-tab>
+  </md-tab-group>
+</md-toolbar>-->
+  
+<div style="padding: 7px">
+  <md-tab-group [class.fix]="fix">
+    <md-tab>
+      <template md-tab-label>a very very loooong label</template>
+      <template md-tab-content>
+        <h1>some content</h1>
+        <button md-raised-button color="primary" (click)="fix = !fix">Fix problem</button>
+      </template>
+    </md-tab>
+    <md-tab>
+      <template md-tab-label>a very very loooong label long long long</template>
+      <template md-tab-content>
+        <h1>some content</h1>
+      </template>
+    </md-tab>
+    <md-tab>
+      <template md-tab-label>a very very loooong label</template>
+      <template md-tab-content>
+        <h1>some content</h1>
+      </template>
+    </md-tab>
+    <md-tab>
+      <template md-tab-label>a very very loooong label</template>
+      <template md-tab-content>
+        <h1>some content</h1>
+      </template>
+    </md-tab>
+    <md-tab>
+      <template md-tab-label>a very very loooong label</template>
+      <template md-tab-content>
+        <h1>some content</h1>
+      </template>
+    </md-tab>
+    <md-tab>
+      <template md-tab-label>a very very loooong label</template>
+      <template md-tab-content>
+        <h1>some content</h1>
+      </template>
+    </md-tab>
+  </md-tab-group>
+</div>
+
+
+  <md-tab-group [selectedIndex]="selectedTab">
+    <md-tab label="Tab 1">Content 1</md-tab>
+    <md-tab label="Tab 2">Content 2</md-tab>
+  </md-tab-group>
+
+
+<div style="width: 100%; height: 400px">
+  <carousel [sources]="imageSources" [config]="config"></carousel>
+</div>
+
+
+
+<md-input-container>
+    <input mdInput placeholder="Username" name="username">
+ </md-input-container>
+
+
+
     <!-- Router Outlet -->
       <!--  The RouterOutlet directive is used to display views for a given route. 
       This is where templates of specific routes are loaded while we navigate:-->
     <!--<router-outlet></router-outlet>-->
-    <!--<h1>
-  {{title}}
-</h1> -->
+
