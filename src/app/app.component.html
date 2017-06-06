@@ -1,88 +1,43 @@
+<md-sidenav-layout [class.m2app-dark]="isDarkTheme">
 
+  <md-sidenav #sidenav mode="side" opened="true"class="app-sidenav">
+   <div class="my-content"><button md-raised-button><md-icon>home</md-icon></button></div>
+    <div class="my-content"><button md-raised-button><md-icon>settings</md-icon></button></div>
+    <div class="my-content"><button md-raised-button>Add member</button></div>
+    <div class="my-content"><button md-raised-button>Chat room</button></div>
+     <div class="my-content"><button md-raised-button>About us</button></div>
+      <div class="my-content"><button md-raised-button><md-icon>contacts</md-icon></button></div>     
+      <div class="my-content"><button md-raised-button><md-icon>logout</md-icon></button></div>     
+  </md-sidenav>
 
-
-<!--<md-toolbar color="primary">
-    <button class="app-icon-button" [mdMenuTriggerFor]="menu">
+  <md-toolbar color="primary">
+    <button class="app-icon-button" (click)="sidenav.toggle()">
       <i class="material-icons app-toolbar-menu">menu</i>
     </button>
-    Angular 2 Material2 Example App
+
+    BibleTalk
+
     <span class="app-toolbar-filler"></span>
     <button md-button (click)="isDarkTheme = !isDarkTheme">TOGGLE DARK THEME</button>
-  </md-toolbar>-->
-  
-  
+  </md-toolbar>
 
-<!--
-<md-toolbar color="primary">
-  <md-tab-group [selectedIndex]="selectedTab">
-    <md-tab label="Tab 1"></md-tab>
-    <md-tab label="Tab 2"></md-tab>
-  </md-tab-group>
-</md-toolbar>-->
-  
-<div style="padding: 7px">
-  <md-tab-group [class.fix]="fix">
-    <md-tab>
-      <template md-tab-label>a very very loooong label</template>
-      <template md-tab-content>
-        <h1>some content</h1>
-        <button md-raised-button color="primary" (click)="fix = !fix">Fix problem</button>
-      </template>
-    </md-tab>
-    <md-tab>
-      <template md-tab-label>a very very loooong label long long long</template>
-      <template md-tab-content>
-        <h1>some content</h1>
-      </template>
-    </md-tab>
-    <md-tab>
-      <template md-tab-label>a very very loooong label</template>
-      <template md-tab-content>
-        <h1>some content</h1>
-      </template>
-    </md-tab>
-    <md-tab>
-      <template md-tab-label>a very very loooong label</template>
-      <template md-tab-content>
-        <h1>some content</h1>
-      </template>
-    </md-tab>
-    <md-tab>
-      <template md-tab-label>a very very loooong label</template>
-      <template md-tab-content>
-        <h1>some content</h1>
-      </template>
-    </md-tab>
-    <md-tab>
-      <template md-tab-label>a very very loooong label</template>
-      <template md-tab-content>
-        <h1>some content</h1>
-      </template>
-    </md-tab>
-  </md-tab-group>
-</div>
+  <div class="app-content">
+
+    <md-card>
+   <md-card-content>
+   <h2>Word of the day</h2> 
+ </md-card-content>
+
+      <md-list class="app-list" style="height: 200px; overflow-y: auto">
+        <md-list-item *ngFor="let food of foods">
+          <h3 md-line>{{food.name}}</h3>
+          <p md-line class="demo-secondary-text">{{food.rating}}</p>
+        </md-list-item>
+      </md-list>
+    </md-card>
 
 
-  <md-tab-group [selectedIndex]="selectedTab">
-    <md-tab label="Tab 1">Content 1</md-tab>
-    <md-tab label="Tab 2">Content 2</md-tab>
-  </md-tab-group>
+  </div>
 
-
-<div style="width: 100%; height: 400px">
-  <carousel [sources]="imageSources" [config]="config"></carousel>
-</div>
-
-
-
-<md-input-container>
-    <input mdInput placeholder="Username" name="username">
- </md-input-container>
-
-
-
-    <!-- Router Outlet -->
-      <!--  The RouterOutlet directive is used to display views for a given route. 
-      This is where templates of specific routes are loaded while we navigate:-->
-    <!--<router-outlet></router-outlet>-->
+</md-sidenav-layout>
 
